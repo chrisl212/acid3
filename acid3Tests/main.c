@@ -15,7 +15,7 @@
 
 int main(int argc, const char * argv[])
 {
-    char fpath[512] = "/Users/christopherloonam/Music/iTunes/iTunes Media/Music/Pink Floyd/See Emily Play/See Emily Play.mp3";;
+    char fpath[512] = "/Users/christopherloonam/Music/iTunes/iTunes Media/Music/Eagles/Their Greatest Hits (1971-1975)/09 Peaceful Easy Feeling.mp3";
     //printf("enter file path\n");
     //fgets(fpath, 512, stdin);
     //size_t len = strlen(fpath);
@@ -29,7 +29,7 @@ int main(int argc, const char * argv[])
     id3_FileOpen(file);
     
     id3_Tag *tag = id3_FileGetTag(file);
-    id3_Frame *albumFrame = id3_TagGetFrameWithID(tag, "TALB");
+    id3_Frame *albumFrame = id3_TagGetFrameWithID(tag, "TPE1");
     
     const char *album = id3_FrameGetData(albumFrame);
     printf("%s", album);

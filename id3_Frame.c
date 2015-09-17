@@ -6,9 +6,11 @@
 //  Copyright (c) 2015 Christopher Loonam. All rights reserved.
 */
 
+#include <math.h>
 #include <stdlib.h>
 #include <string.h>
 #include "id3_Frame.h"
+#include "id3_Error.h"
 
 struct id3_Frame
 {
@@ -18,6 +20,8 @@ struct id3_Frame
     char *data;
     id3_Frame *next;
 };
+
+extern id3_Bool isBitEnabled(char flag, int bit);
 
 id3_Frame *id3_FrameCreate()
 {
@@ -73,4 +77,35 @@ void id3_FrameFree(id3_Frame *f)
         id3_FrameFree(f->next);
     free(f);
 }
+
+id3_Bool id3_FrameShouldBePreservedTagAlter(id3_Frame *f)
+{
+    return isBitEnabled(f->flags[0], 7);
+}
+
+id3_Bool id3_FrameShouldBePreservedFileAlter(id3_Frame *f)
+{
+    return isBitEnabled(f->flags[0], 6);
+}
+
+id3_Bool id3_FrameIsReadOnly(id3_Frame *f)
+{
+    return isBitEnabled(f->flags[0], 5);
+}
+
+id3_Bool id3_FrameIsCompressed(id3_Frame *f)
+{
+    return isBitEnabled(f->flags[1], 7);
+}
+
+id3_Bool id3_FrameIsEncrypted(id3_Frame *f)
+{
+    return isBitEnabled(f->flags[1], 6);
+}
+
+id3_Bool id3_FrameHasGroupingIdentity(id3_Frame *f)
+{
+    return isBitEnabled(f->flags[1], 5);
+}
+
 

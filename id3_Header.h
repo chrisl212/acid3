@@ -11,7 +11,10 @@
 
 #include <stdio.h>
 #include <stdint.h>
-#include "id3_Error.h"
+
+#ifndef id3_Bool
+#define id3_Bool signed char
+#endif
 
 struct id3_File;
 typedef struct id3_Header id3_Header;

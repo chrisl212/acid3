@@ -8,6 +8,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <iconv.h>
 #include "id3_Tag.h"
 #include "id3_Header.h"
 #include "id3_File.h"
@@ -40,7 +41,7 @@ id3_Tag *id3_TagCreateFromFile(id3_File *fi)
     id3_Header *head;
     id3_Tag *tag;
     uint32_t tagSize;
-    char /*tagData*/frameHeader[10], frameID[5], flags[2], *frameData;
+    char /*tagData*/frameHeader[11], frameID[5], flags[2], *frameData;
     unsigned char frameSizeBytes[4];
     uint32_t i, loc, frameSize, totalRead;
     id3_Frame *frame;
@@ -55,7 +56,7 @@ id3_Tag *id3_TagCreateFromFile(id3_File *fi)
     
     /*fread(tagData, 1, tagSize, fi->file);*/
     
-    while ((totalRead += (uint32_t)fread(frameHeader, 1, 10, fi->file)) < tagSize)
+    while ((totalRead += (uint32_t)fread(frameHeader, 1, 11, fi->file)) < tagSize)
     {
         if (!frame)
             tag->frame = frame = id3_FrameCreate();
@@ -74,7 +75,7 @@ id3_Tag *id3_TagCreateFromFile(id3_File *fi)
         for (i = 0; i < 4; i++)
             frameSizeBytes[i] = (unsigned char)frameHeader[loc+i];
         loc += 4;
-        frameSize = ((uint32_t)frameSizeBytes[0] << 24) | (uint32_t)(frameSizeBytes[1] << 16) | (uint32_t)(frameSizeBytes[2] << 8) | (uint32_t)frameSizeBytes[3];
+        frameSize = (((uint32_t)frameSizeBytes[0] << 24) | (uint32_t)(frameSizeBytes[1] << 16) | (uint32_t)(frameSizeBytes[2] << 8) | (uint32_t)frameSizeBytes[3]) - 1;
         id3_FrameSetSize(frame, frameSize);
         
         for (i = 0; i < 2; i++)
@@ -82,10 +83,15 @@ id3_Tag *id3_TagCreateFromFile(id3_File *fi)
         loc = 0;
         id3_FrameSetFlags(frame, flags);
         
-        frameData = malloc(frameSize+1);
+        frameData = malloc(frameSize);
         totalRead += fread(frameData, 1, frameSize, fi->file);
-        frameData[frameSize] = '\0';
+        
+       /* i = 0;
+        while (i < frameSize)
+            putc((frameData[i] == '\0') ? 'N' : frameData[i], stdout), i++;
+        fflush(stdout); */
         id3_FrameSetData(frame, frameData);
+
         free(frameData);
     }
     

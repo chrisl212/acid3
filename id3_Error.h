@@ -21,8 +21,11 @@
 #define ID3_FCLOSE_ERR -4
 #define ID3_FREAD_ERR -5
 
+#ifndef id3_Bool
+    #define id3_Bool signed char
+#endif
+
 typedef signed int id3_Error;
-typedef unsigned int id3_Bool;
 
 char *id3_Strerror(id3_Error);
 

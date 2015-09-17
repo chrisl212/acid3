@@ -20,6 +20,7 @@
 		AB1815661BAB46AB00F65B33 /* libm.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1815651BAB46AB00F65B33 /* libm.dylib */; };
 		AB1815691BAB48B900F65B33 /* id3_Frame.c in Sources */ = {isa = PBXBuildFile; fileRef = AB1815671BAB48B900F65B33 /* id3_Frame.c */; };
 		AB18156A1BAB48B900F65B33 /* id3_Frame.h in Headers */ = {isa = PBXBuildFile; fileRef = AB1815681BAB48B900F65B33 /* id3_Frame.h */; };
+		AB18156C1BAB7FA800F65B33 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB18156B1BAB7FA800F65B33 /* libiconv.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,7 @@
 		AB1815651BAB46AB00F65B33 /* libm.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libm.dylib; path = usr/lib/libm.dylib; sourceTree = SDKROOT; };
 		AB1815671BAB48B900F65B33 /* id3_Frame.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = id3_Frame.c; sourceTree = "<group>"; };
 		AB1815681BAB48B900F65B33 /* id3_Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = id3_Frame.h; sourceTree = "<group>"; };
+		AB18156B1BAB7FA800F65B33 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB18156C1BAB7FA800F65B33 /* libiconv.dylib in Frameworks */,
 				AB1815661BAB46AB00F65B33 /* libm.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +77,7 @@
 		AB1815381BAA57C400F65B33 = {
 			isa = PBXGroup;
 			children = (
+				AB18156B1BAB7FA800F65B33 /* libiconv.dylib */,
 				AB1815651BAB46AB00F65B33 /* libm.dylib */,
 				AB1815531BAA57E100F65B33 /* acid3 */,
 				AB18154D1BAA57DC00F65B33 /* acid3Tests */,

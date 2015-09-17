@@ -12,6 +12,10 @@
 #include <stdio.h>
 #include <stdint.h>
 
+#ifndef id3_Bool
+#define id3_Bool signed char
+#endif
+
 typedef struct id3_Frame id3_Frame;
 
 id3_Frame *id3_FrameCreate();
@@ -25,6 +29,13 @@ const char *id3_FrameGetID(id3_Frame *);
 uint32_t id3_FrameGetSize(id3_Frame *);
 const char *id3_FrameGetFlags(id3_Frame *);
 const char *id3_FrameGetData(id3_Frame *);
+
+id3_Bool id3_FrameShouldBePreservedTagAlter(id3_Frame *);
+id3_Bool id3_FrameShouldBePreservedFileAlter(id3_Frame *);
+id3_Bool id3_FrameIsReadOnly(id3_Frame *);
+id3_Bool id3_FrameIsCompressed(id3_Frame *);
+id3_Bool id3_FrameIsEncrypted(id3_Frame *);
+id3_Bool id3_FrameHasGroupingIdentity(id3_Frame *);
 
 void id3_FrameFree(id3_Frame *);
 
