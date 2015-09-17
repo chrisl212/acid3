@@ -15,6 +15,11 @@
 		AB18155C1BAA5B1F00F65B33 /* id3_File.h in Headers */ = {isa = PBXBuildFile; fileRef = AB18155A1BAA5B1F00F65B33 /* id3_File.h */; };
 		AB18155F1BAA5B6F00F65B33 /* id3_Error.c in Sources */ = {isa = PBXBuildFile; fileRef = AB18155D1BAA5B6F00F65B33 /* id3_Error.c */; };
 		AB1815601BAA5B6F00F65B33 /* id3_Error.h in Headers */ = {isa = PBXBuildFile; fileRef = AB18155E1BAA5B6F00F65B33 /* id3_Error.h */; };
+		AB1815631BAB40A100F65B33 /* id3_Tag.c in Sources */ = {isa = PBXBuildFile; fileRef = AB1815611BAB40A100F65B33 /* id3_Tag.c */; };
+		AB1815641BAB40A100F65B33 /* id3_Tag.h in Headers */ = {isa = PBXBuildFile; fileRef = AB1815621BAB40A100F65B33 /* id3_Tag.h */; };
+		AB1815661BAB46AB00F65B33 /* libm.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1815651BAB46AB00F65B33 /* libm.dylib */; };
+		AB1815691BAB48B900F65B33 /* id3_Frame.c in Sources */ = {isa = PBXBuildFile; fileRef = AB1815671BAB48B900F65B33 /* id3_Frame.c */; };
+		AB18156A1BAB48B900F65B33 /* id3_Frame.h in Headers */ = {isa = PBXBuildFile; fileRef = AB1815681BAB48B900F65B33 /* id3_Frame.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +44,11 @@
 		AB18155A1BAA5B1F00F65B33 /* id3_File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = id3_File.h; sourceTree = "<group>"; };
 		AB18155D1BAA5B6F00F65B33 /* id3_Error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = id3_Error.c; sourceTree = "<group>"; };
 		AB18155E1BAA5B6F00F65B33 /* id3_Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = id3_Error.h; sourceTree = "<group>"; };
+		AB1815611BAB40A100F65B33 /* id3_Tag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = id3_Tag.c; sourceTree = "<group>"; };
+		AB1815621BAB40A100F65B33 /* id3_Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = id3_Tag.h; sourceTree = "<group>"; };
+		AB1815651BAB46AB00F65B33 /* libm.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libm.dylib; path = usr/lib/libm.dylib; sourceTree = SDKROOT; };
+		AB1815671BAB48B900F65B33 /* id3_Frame.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = id3_Frame.c; sourceTree = "<group>"; };
+		AB1815681BAB48B900F65B33 /* id3_Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = id3_Frame.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB1815661BAB46AB00F65B33 /* libm.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +74,7 @@
 		AB1815381BAA57C400F65B33 = {
 			isa = PBXGroup;
 			children = (
+				AB1815651BAB46AB00F65B33 /* libm.dylib */,
 				AB1815531BAA57E100F65B33 /* acid3 */,
 				AB18154D1BAA57DC00F65B33 /* acid3Tests */,
 				AB1815421BAA57C400F65B33 /* Products */,
@@ -95,6 +107,10 @@
 				AB1815591BAA5B1F00F65B33 /* id3_File.c */,
 				AB1815551BAA5AFB00F65B33 /* id3_Header.h */,
 				AB1815541BAA5AFB00F65B33 /* id3_Header.c */,
+				AB1815621BAB40A100F65B33 /* id3_Tag.h */,
+				AB1815611BAB40A100F65B33 /* id3_Tag.c */,
+				AB1815681BAB48B900F65B33 /* id3_Frame.h */,
+				AB1815671BAB48B900F65B33 /* id3_Frame.c */,
 			);
 			name = acid3;
 			sourceTree = "<group>";
@@ -108,7 +124,9 @@
 			files = (
 				AB1815601BAA5B6F00F65B33 /* id3_Error.h in Headers */,
 				AB1815571BAA5AFB00F65B33 /* id3_Header.h in Headers */,
+				AB1815641BAB40A100F65B33 /* id3_Tag.h in Headers */,
 				AB18155C1BAA5B1F00F65B33 /* id3_File.h in Headers */,
+				AB18156A1BAB48B900F65B33 /* id3_Frame.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,8 +208,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB18155F1BAA5B6F00F65B33 /* id3_Error.c in Sources */,
+				AB1815631BAB40A100F65B33 /* id3_Tag.c in Sources */,
 				AB18155B1BAA5B1F00F65B33 /* id3_File.c in Sources */,
 				AB1815561BAA5AFB00F65B33 /* id3_Header.c in Sources */,
+				AB1815691BAB48B900F65B33 /* id3_Frame.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,10 +306,27 @@
 		AB1815461BAA57C400F65B33 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_MODULES_AUTOLINK = NO;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = c89;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				LINK_WITH_STANDARD_LIBRARIES = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -297,10 +334,27 @@
 		AB1815471BAA57C400F65B33 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_MODULES_AUTOLINK = NO;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = c89;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				LINK_WITH_STANDARD_LIBRARIES = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
