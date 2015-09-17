@@ -6,8 +6,39 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AB18154F1BAA57DC00F65B33 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = AB18154E1BAA57DC00F65B33 /* main.c */; };
+		AB1815561BAA5AFB00F65B33 /* id3_Header.c in Sources */ = {isa = PBXBuildFile; fileRef = AB1815541BAA5AFB00F65B33 /* id3_Header.c */; };
+		AB1815571BAA5AFB00F65B33 /* id3_Header.h in Headers */ = {isa = PBXBuildFile; fileRef = AB1815551BAA5AFB00F65B33 /* id3_Header.h */; };
+		AB1815581BAA5B0800F65B33 /* libacid3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1815411BAA57C400F65B33 /* libacid3.dylib */; };
+		AB18155B1BAA5B1F00F65B33 /* id3_File.c in Sources */ = {isa = PBXBuildFile; fileRef = AB1815591BAA5B1F00F65B33 /* id3_File.c */; };
+		AB18155C1BAA5B1F00F65B33 /* id3_File.h in Headers */ = {isa = PBXBuildFile; fileRef = AB18155A1BAA5B1F00F65B33 /* id3_File.h */; };
+		AB18155F1BAA5B6F00F65B33 /* id3_Error.c in Sources */ = {isa = PBXBuildFile; fileRef = AB18155D1BAA5B6F00F65B33 /* id3_Error.c */; };
+		AB1815601BAA5B6F00F65B33 /* id3_Error.h in Headers */ = {isa = PBXBuildFile; fileRef = AB18155E1BAA5B6F00F65B33 /* id3_Error.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AB18154A1BAA57DC00F65B33 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		AB1815411BAA57C400F65B33 /* libacid3.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libacid3.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB18154C1BAA57DC00F65B33 /* acid3Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = acid3Tests; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB18154E1BAA57DC00F65B33 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		AB1815541BAA5AFB00F65B33 /* id3_Header.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = id3_Header.c; sourceTree = "<group>"; };
+		AB1815551BAA5AFB00F65B33 /* id3_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = id3_Header.h; sourceTree = "<group>"; };
+		AB1815591BAA5B1F00F65B33 /* id3_File.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = id3_File.c; sourceTree = "<group>"; };
+		AB18155A1BAA5B1F00F65B33 /* id3_File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = id3_File.h; sourceTree = "<group>"; };
+		AB18155D1BAA5B6F00F65B33 /* id3_Error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = id3_Error.c; sourceTree = "<group>"; };
+		AB18155E1BAA5B6F00F65B33 /* id3_Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = id3_Error.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -18,12 +49,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB1815491BAA57DC00F65B33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB1815581BAA5B0800F65B33 /* libacid3.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		AB1815381BAA57C400F65B33 = {
 			isa = PBXGroup;
 			children = (
+				AB1815531BAA57E100F65B33 /* acid3 */,
+				AB18154D1BAA57DC00F65B33 /* acid3Tests */,
 				AB1815421BAA57C400F65B33 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -32,8 +73,30 @@
 			isa = PBXGroup;
 			children = (
 				AB1815411BAA57C400F65B33 /* libacid3.dylib */,
+				AB18154C1BAA57DC00F65B33 /* acid3Tests */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AB18154D1BAA57DC00F65B33 /* acid3Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AB18154E1BAA57DC00F65B33 /* main.c */,
+			);
+			path = acid3Tests;
+			sourceTree = "<group>";
+		};
+		AB1815531BAA57E100F65B33 /* acid3 */ = {
+			isa = PBXGroup;
+			children = (
+				AB18155E1BAA5B6F00F65B33 /* id3_Error.h */,
+				AB18155D1BAA5B6F00F65B33 /* id3_Error.c */,
+				AB18155A1BAA5B1F00F65B33 /* id3_File.h */,
+				AB1815591BAA5B1F00F65B33 /* id3_File.c */,
+				AB1815551BAA5AFB00F65B33 /* id3_Header.h */,
+				AB1815541BAA5AFB00F65B33 /* id3_Header.c */,
+			);
+			name = acid3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -43,6 +106,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB1815601BAA5B6F00F65B33 /* id3_Error.h in Headers */,
+				AB1815571BAA5AFB00F65B33 /* id3_Header.h in Headers */,
+				AB18155C1BAA5B1F00F65B33 /* id3_File.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +132,23 @@
 			productReference = AB1815411BAA57C400F65B33 /* libacid3.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
+		AB18154B1BAA57DC00F65B33 /* acid3Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB1815501BAA57DC00F65B33 /* Build configuration list for PBXNativeTarget "acid3Tests" */;
+			buildPhases = (
+				AB1815481BAA57DC00F65B33 /* Sources */,
+				AB1815491BAA57DC00F65B33 /* Frameworks */,
+				AB18154A1BAA57DC00F65B33 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = acid3Tests;
+			productName = acid3Tests;
+			productReference = AB18154C1BAA57DC00F65B33 /* acid3Tests */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -76,6 +159,9 @@
 				ORGANIZATIONNAME = "Christopher Loonam";
 				TargetAttributes = {
 					AB1815401BAA57C400F65B33 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					AB18154B1BAA57DC00F65B33 = {
 						CreatedOnToolsVersion = 6.4;
 					};
 				};
@@ -93,6 +179,7 @@
 			projectRoot = "";
 			targets = (
 				AB1815401BAA57C400F65B33 /* acid3 */,
+				AB18154B1BAA57DC00F65B33 /* acid3Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -102,6 +189,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB18155F1BAA5B6F00F65B33 /* id3_Error.c in Sources */,
+				AB18155B1BAA5B1F00F65B33 /* id3_File.c in Sources */,
+				AB1815561BAA5AFB00F65B33 /* id3_Header.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB1815481BAA57DC00F65B33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB18154F1BAA57DC00F65B33 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +289,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = c89;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -201,6 +300,25 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = c89;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AB1815511BAA57DC00F65B33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AB1815521BAA57DC00F65B33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -222,6 +340,14 @@
 			buildConfigurations = (
 				AB1815461BAA57C400F65B33 /* Debug */,
 				AB1815471BAA57C400F65B33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AB1815501BAA57DC00F65B33 /* Build configuration list for PBXNativeTarget "acid3Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB1815511BAA57DC00F65B33 /* Debug */,
+				AB1815521BAA57DC00F65B33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
